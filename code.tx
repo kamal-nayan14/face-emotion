@@ -1,0 +1,22 @@
+# Import necessary libraries for face emotion recognition
+import cv2
+from deepface import DeepFace
+
+# Load the image for face emotion recognition
+image_path = 'path_to_your_image.jpg'  # Replace 'path_to_your_image.jpg' with the actual path to your image
+img = cv2.imread(image_path)
+
+# Perform face detection and emotion recognition
+faces = DeepFace.analyze(img, actions=['emotion'])
+
+# Explore the face emotion analysis resultpip 
+print("Emotion analysis result:")
+print(faces)
+
+# Explore the emotion labels and their probabilities
+emotion_labels = faces['dominant_emotion']
+emotion_probabilities = faces['emotion']
+print("Emotion labels:", emotion_labels)
+print("Emotion probabilities:", emotion_probabilities)
+
+# Now, you can proceed to visualize the result or perform further analysis as needed.
